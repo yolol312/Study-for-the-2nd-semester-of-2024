@@ -42,6 +42,16 @@ public class main_08_01 {
         }
         return digitCount;
     }
+    // 글자 수 구하기
+    int getCharCount(String str) {
+        int count = 0;
+        for(int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) != ' '){
+                count++;
+            }
+        }
+        return count;
+    }
 
     public static void main(String[] args) throws IOException {
         main_08_01 main = new main_08_01();
@@ -79,5 +89,11 @@ public class main_08_01 {
         System.out.println(result);
         */
 
+        // 글자 수 구하기
+        InputStream in = System.in;
+        InputStreamReader reader = new InputStreamReader(in);
+        BufferedReader br = new BufferedReader(reader);
+        int count = main.getCharCount(br.readLine());
+        System.out.println(count);
     }
 }
