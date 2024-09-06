@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class main_08_01 {
     //입력받은 숫자의 단 출력하기
@@ -20,6 +21,28 @@ public class main_08_01 {
         }
         return sum;
     }
+    //게시판 페이징하기
+    int getTotalPage(int totalwriting, int countbypage) {
+        int totalpage = 0;
+        if (totalwriting % countbypage == 0) {
+            totalpage = totalwriting / countbypage;
+        }
+        else{
+            totalpage = (totalwriting / countbypage) + 1;
+        }
+        return totalpage;
+    }
+    //자릿수 구하기
+    int getDigitCount(int num) {
+        int digit = 1;
+        int digitCount = 0;
+        while(num / digit >= 1){
+            digitCount++;
+            digit *= 10;
+        }
+        return digitCount;
+    }
+
     public static void main(String[] args) throws IOException {
         main_08_01 main = new main_08_01();
 
@@ -31,7 +54,30 @@ public class main_08_01 {
         main.gugu(num);
         */
 
+        /* 1000미만 3, 5의 배수 총합
         int result = main.sum_3_5();
         System.out.println(result);
+        */
+
+        /* 페이징 하기
+        InputStream in = System.in;
+        InputStreamReader reader = new InputStreamReader(in);
+        BufferedReader br = new BufferedReader(reader);
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int totalwriting = Integer.parseInt(st.nextToken());
+        int countbypage = Integer.parseInt(st.nextToken());
+        int totalpage = main.getTotalPage(totalwriting, countbypage);
+        System.out.println(totalpage);
+        */
+
+        /* 자릿수 구하기
+        InputStream in = System.in;
+        InputStreamReader reader = new InputStreamReader(in);
+        BufferedReader br = new BufferedReader(reader);
+        int num = Integer.parseInt(br.readLine());
+        int result = main.getDigitCount(num);
+        System.out.println(result);
+        */
+
     }
 }
