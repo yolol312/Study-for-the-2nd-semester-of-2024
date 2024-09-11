@@ -2,14 +2,15 @@ package com.example.sbb;
 
 import java.util.Optional;
 
-import com.example.sbb.DTO.AnswerDTO;
-import com.example.sbb.DTO.QuestionDTO;
+import com.example.sbb.Answer.AnswerDTO;
+import com.example.sbb.Answer.AnswerRepository;
+import com.example.sbb.Question.QuestionDTO;
+import com.example.sbb.Question.QuestionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

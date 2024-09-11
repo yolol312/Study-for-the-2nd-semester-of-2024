@@ -1,7 +1,6 @@
-package com.example.sbb;
+package com.example.sbb.Answer;
 
 
-import com.example.sbb.DTO.AnswerDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AnswerRepository extends JpaRepository<AnswerDTO, Integer> {

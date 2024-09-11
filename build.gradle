@@ -27,6 +27,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     //implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'nz.net.ultra.thymeleaf:thymeleaf-layout-dialect'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.mysql:mysql-connector-j'
@@ -35,6 +37,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 }
+
 
 test {
     useJUnitPlatform()
