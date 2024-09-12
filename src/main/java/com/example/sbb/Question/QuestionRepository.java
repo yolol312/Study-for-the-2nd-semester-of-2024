@@ -1,5 +1,6 @@
 package com.example.sbb.Question;
 
+import com.example.sbb.Answer.AnswerDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
