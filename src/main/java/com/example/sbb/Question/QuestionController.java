@@ -1,5 +1,6 @@
 package com.example.sbb.Question;
 
+import com.example.sbb.Answer.AnswerInsert;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -24,15 +25,17 @@ public class QuestionController {
     }
 
     @GetMapping(value = "/detail/{id}")
-    public String detail(Model model, @PathVariable("id") Integer id) {
+    public String detail(Model model, @PathVariable("id") Integer id, AnswerInsert answerInsert) {
         QuestionDTO question = this.questionService.getQuestion(id);
         model.addAttribute("question", question);
         return "question_detail";
     }
+
     @GetMapping("/insert")
-    public String insertQuestion(){
+    public String insertQuestion(QuestionInsert questionInsert) {
         return "insert_question";
     }
+
     /* 검증이 없는 버전
     @PostMapping("/insert")
     public String writeQuestion(@RequestParam(value="subject") String subject, @RequestParam(value="content") String content) {
@@ -40,6 +43,7 @@ public class QuestionController {
         return "redirect:/question/list";
     }
     */
+
     @PostMapping("/insert")
     public String writeQuestion(@Valid QuestionInsert quetionInsert, BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
